@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; 
-import img3 from "./images/Payment.png"; // Adjust the path as necessary
+// Adjust the path as necessary
 const Footer = () => (
   <footer className="bg-[#0C4275] text-white">
     <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between gap-8">
@@ -75,7 +75,7 @@ const Footer = () => (
           8 The Green Suite 10150, Dover, Delaware 19901, United States
         </p>
         <div className="flex flex-wrap gap-2 mb-2">
-          <img src={img3} alt="" srcset="" />
+          <img src="src\assets\images\payment.png" alt="" srcset="" />
         </div>
       </div>
     </div>
