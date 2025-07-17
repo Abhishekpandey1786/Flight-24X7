@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { MdOutlineFlightTakeoff } from "react-icons/md";
+import { MdOutlineFlightTakeoff, MdPhone } from "react-icons/md";
+import { useNavigate, Link } from "react-router-dom";
 import Autocomplete from "./Autocomplete";
 import Destination from "./Destination";
-import { useNavigate, Link } from "react-router-dom";
-import { FaComments } from "react-icons/fa";
-import { MdPhone } from "react-icons/md";
+
 function BookingForm() {
   const [tripType, setTripType] = useState("round");
   const [adult, setAdult] = useState(1);
@@ -13,6 +12,15 @@ function BookingForm() {
   const [infantLap, setInfantLap] = useState(0);
   const totalTravelers = adult + child + infantSeat + infantLap;
   const navigate = useNavigate();
+
+  const handlePhoneClick = () => {
+    if (window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17361609005/NFulCN_G0vIaEK3C1NZA",
+        phone_conversion_number: "+1(803)745-9981",
+      });
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,7 +82,7 @@ function BookingForm() {
   return (
     <>
       <div
-        className=" min-h-[80vh] flex flex-col lg:flex-row items-center justify-center px-4 py-6 gap-6"
+        className="min-h-[80vh] flex flex-col lg:flex-row items-center justify-center px-4 py-6 gap-6"
         style={{
           backgroundImage: `url('https://cdn.prod.website-files.com/6630e01961a932246ebda785/66d92dfed42d7f5763e3cc7a_How%20Delta%20Airlines%20Improves%20Customer%20Experience%20(CX)%20with%20Operational%20Excellence.webp')`,
           backgroundSize: "cover",
@@ -92,7 +100,6 @@ function BookingForm() {
             onSubmit={handleSubmit}
             className="bg-blue-900 text-white p-4 rounded-b-xl space-y-4"
           >
-            {/* Trip Type */}
             <div className="flex flex-col sm:flex-row sm:space-x-8 space-y-2 sm:space-y-0">
               <label className="flex items-center space-x-2">
                 <input
@@ -121,7 +128,6 @@ function BookingForm() {
             <Autocomplete />
             <Destination />
 
-            {/* Dates */}
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0">
               <input
                 type="date"
@@ -139,38 +145,18 @@ function BookingForm() {
               )}
             </div>
 
-            {/* Travelers */}
             <div className="bg-white text-black p-3 rounded space-y-3">
               <div className="font-semibold flex items-center">
-                <span className="text-red-600 mr-2">●</span> {totalTravelers}{" "}
-                Traveler(s)
+                <span className="text-red-600 mr-2">●</span> {totalTravelers} Traveler(s)
               </div>
-
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <TravelerCounter
-                  label="Adult"
-                  value={adult}
-                  setValue={setAdult}
-                />
-                <TravelerCounter
-                  label="Child (2-12 YRS)"
-                  value={child}
-                  setValue={setChild}
-                />
-                <TravelerCounter
-                  label="Infant (on seat under 2)"
-                  value={infantSeat}
-                  setValue={setInfantSeat}
-                />
-                <TravelerCounter
-                  label="Infant (on lap under 2)"
-                  value={infantLap}
-                  setValue={setInfantLap}
-                />
+                <TravelerCounter label="Adult" value={adult} setValue={setAdult} />
+                <TravelerCounter label="Child (2-12 YRS)" value={child} setValue={setChild} />
+                <TravelerCounter label="Infant (on seat under 2)" value={infantSeat} setValue={setInfantSeat} />
+                <TravelerCounter label="Infant (on lap under 2)" value={infantLap} setValue={setInfantLap} />
               </div>
             </div>
 
-            {/* Class & Airline */}
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="w-full sm:w-1/2 bg-amber-50 text-black rounded p-2">
                 <label className="block mb-1 text-sm">Class</label>
@@ -193,21 +179,15 @@ function BookingForm() {
                   className="w-full px-3 py-2 rounded border bg-amber-50 mb-2 text-sm"
                 />
                 <div className="flex items-center space-x-2">
-                  <input
-                    type="checkbox"
-                    id="direct"
-                    className="accent-red-500"
-                  />
-                  <label htmlFor="direct" className="text-sm">
-                    Direct Flight
-                  </label>
+                  <input type="checkbox" id="direct" className="accent-red-500" />
+                  <label htmlFor="direct" className="text-sm">Direct Flight</label>
                 </div>
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 rounded  transition-all duration-300 hover:active:scale-95"
+              className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 rounded transition-all duration-300 hover:active:scale-95"
             >
               SEARCH FLIGHT
             </button>
@@ -216,7 +196,6 @@ function BookingForm() {
 
         {/* Right Panel */}
         <div className="w-full max-w-md bg-amber-50 rounded-xl shadow-lg p-4 text-center opacity-90">
-          {/* Header with Side Icons */}
           <div className="relative bg-red-500 py-4 mb-3 rounded-xl text-center">
             <Link to="/no-flights">
               <h1 className="text-white text-xl font-bold transition-all duration-300 hover:active:scale-75">
@@ -231,17 +210,20 @@ function BookingForm() {
             <h1>IT'S FREE!</h1>
             <a
               href="tel:+18037459981"
-              className="text-2xl font-bold text-green-700 mb-4 animate-pulse transition-all duration-300  inline-block "
+              onClick={handlePhoneClick}
+              className="text-2xl font-bold text-green-700 mb-4 animate-pulse transition-all duration-300 inline-block"
             >
               📞 +1-803-745-9981
-
             </a>
           </div>
         </div>
       </div>
+
+      {/* Floating Call Button */}
       <a
         href="tel:+18037459981"
-        className="fixed bottom-[40px] right-4 z-50 bg-red-500 text-white p-4 rounded-full shadow-xl hover:scale-110 hover:bg-red-600 transition-all duration-300  animate-bounce"
+        onClick={handlePhoneClick}
+        className="fixed bottom-[40px] right-4 z-50 bg-red-500 text-white p-4 rounded-full shadow-xl hover:scale-110 hover:bg-red-600 transition-all duration-300 animate-bounce"
         title="Call Us"
       >
         <MdPhone className="text-2xl" />
