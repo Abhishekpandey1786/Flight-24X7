@@ -223,7 +223,7 @@ function BookingForm() {
       <a
         href="tel:+18037459981"
         onClick={handlePhoneClick}
-        className="fixed bottom-[40px] right-4 z-50 bg-red-500 text-white p-4 rounded-full shadow-xl hover:scale-110 hover:bg-red-600 transition-all duration-300 animate-bounce"
+        className="fixed bottom-[40px] right-4 z-50 bg-red-500 text-white p-4 rounded-full shadow-xl hover:scale-110 hover:bg-red-600 transition-all duration-300 animate-bounce  hover:active:scale-75"
         title="Call Us"
       >
         <MdPhone className="text-2xl" />
