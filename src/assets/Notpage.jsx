@@ -28,7 +28,7 @@ const NoFlightsFound = () => (
       </div>
 
       <div className="text-2xl font-bold text-green-700 mb-4 animate-pulse">
-        <a href="tel: 📞 +18037459981">📞 +1-803-745-9981</a>
+        <a href="tel: 📞 +18062249728">📞 +1-806-224-9728</a>
       </div>
 
       <p className="text-gray-500 text-sm mb-6">
