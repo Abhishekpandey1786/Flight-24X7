@@ -209,11 +209,11 @@ function BookingForm() {
             <h1>For Changes & Cancelations</h1>
             <h1>IT'S FREE!</h1>
             <a
-              href="tel:+18062249728"
+              href="tel:+1-803-762-4528"
               onClick={handlePhoneClick}
               className="text-2xl font-bold text-green-700 mb-4 animate-pulse transition-all duration-300 inline-block"
             >
-              📞 +1-806-224-9728
+              📞 +1-803-762-4528
             </a>
           </div>
         </div>
@@ -221,7 +221,7 @@ function BookingForm() {
 
       {/* Floating Call Button */}
       <a
-        href="tel:+18062249728"
+        href="tel:+1-803-762-4528"
         onClick={handlePhoneClick}
         className="fixed bottom-[40px] right-4 z-50 bg-red-500 text-white p-4 rounded-full shadow-xl hover:scale-110 hover:bg-red-600 transition-all duration-300 animate-bounce  hover:active:scale-75"
         title="Call Us"
