@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import PhoneConversion from "./PhoneConversion";
 
 const pageData = {
   about: {
@@ -72,7 +73,9 @@ const pageData = {
             </p>
             <p>
               Phone: <div className="text-2xl font-bold text-green-700 mb-4 animate-pulse">
-        <a href="tel: 📞 +1-833-959-2866">📞 +1-833-959-2866</a>
+        <p>
+            <PhoneConversion /> 
+          </p>
       </div>
             </p>
           </div>

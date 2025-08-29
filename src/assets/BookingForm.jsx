@@ -13,11 +13,11 @@ function BookingForm() {
   const totalTravelers = adult + child + infantSeat + infantLap;
   const navigate = useNavigate();
 
-  const handlePhoneClick = () => {
+ const handlePhoneClick = () => {
+    // ✅ Google Ads phone conversion tracking
     if (window.gtag) {
-      window.gtag("event", "conversion", {
-        send_to: "AW-17361609005/NFulCN_G0vIaEK3C1NZA",
-        phone_conversion_number: "+1(803)745-9981",
+      window.gtag("config", "AW-17442854248/VSUcCMbOlpAbEOiqs_1A", {
+        phone_conversion_number: "(833) 959-2866",
       });
     }
   };
@@ -49,6 +49,7 @@ function BookingForm() {
         alert("Maximum 9 travelers allowed.");
       }
     };
+    
 
     return (
       <div>

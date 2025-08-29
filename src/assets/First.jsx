@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPhoneVolume } from "react-icons/fa6";
-
+import PhoneConversion from "./PhoneConversion"; // ✅ Import the component
 const First = () => {
   // ✅ Conversion Event Trigger Function
   const handleCallClick = () => {
@@ -38,7 +38,9 @@ const First = () => {
                 onClick={handleCallClick}
                 className="hover:underline"
               >
-                +1-833-959-2866
+               <p>
+             <PhoneConversion /> 
+          </p>
               </a>
             </h1>
           </div>
