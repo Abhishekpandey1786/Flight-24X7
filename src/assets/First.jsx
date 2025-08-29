@@ -33,12 +33,12 @@ const First = () => {
             </span>
             <h1 className="text-base sm:text-lg md:text-xl font-bold text-red-500">
               <a
-                href="tel:+1-803-762-4528"
+                href="tel:+1-833-959-2866"
                 title="Call Us"
                 onClick={handleCallClick}
                 className="hover:underline"
               >
-                +1-803-762-4528
+                +1-833-959-2866
               </a>
             </h1>
           </div>

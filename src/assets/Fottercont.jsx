@@ -72,7 +72,7 @@ const pageData = {
             </p>
             <p>
               Phone: <div className="text-2xl font-bold text-green-700 mb-4 animate-pulse">
-        <a href="tel: 📞 +1-803-762-4528">📞 +1-803-762-4528</a>
+        <a href="tel: 📞 +1-833-959-2866">📞 +1-833-959-2866</a>
       </div>
             </p>
           </div>
